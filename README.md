@@ -1,4 +1,4 @@
-# TeraLeads Senior AI Engineer Assessment
+# AI Engineer Assessment
 
 Functional prototype for an AI appointment-booking chatbot with explicit service boundaries, practical LLM orchestration, and explainable architecture choices.
 
@@ -13,20 +13,6 @@ If you want a quick walkthrough of architecture decisions, check `docs/engineeri
 - PostgreSQL schema with indexes and seed data
 - Documentation focused on engineering decisions and tradeoffs
 
-## Requirement Coverage Snapshot
-
-| Area | Status | Notes |
-|---|---|---|
-| Frontend chatbot UI (React/Next.js) | Done | Next.js App Router with auth + Socket.IO chat |
-| Real-time updates (WebSockets or polling) | Done | Socket.IO websocket path |
-| Basic authentication/session handling | Done | JWT-based auth and chat-scoped token |
-| `POST /api/chatbot/token` | Done | Short-lived token minted after auth |
-| Middleware composition | Done | Logging, validation, rate limiting, error handling |
-| Python LangChain service | Done | Prompted response generation + fallback path |
-| Multi-turn state management | Done | Session memory + extracted booking slots |
-| Appointment flow | Done | Collect -> validate -> availability -> upsert appointment |
-| Interaction logging | Done | Chat transcript persistence + structured AI logs |
-| PostgreSQL schema + sample data | Done | `users`, `appointments`, `chat_sessions` + indexes |
 
 ## Architecture Overview
 
@@ -216,3 +202,4 @@ Indexes are tuned for expected access patterns:
 4. Add e2e tests across auth + socket + booking lifecycle.
 5. Harden auth with refresh tokens, rotation, and secret management.
 6. Add tracing and domain metrics (`time_to_booking`, `slot_fill_rate`, `handoff_rate`).
+
